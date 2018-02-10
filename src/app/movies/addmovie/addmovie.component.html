@@ -1,0 +1,34 @@
+<div class="container">
+  <form #addmovie="ngForm" >
+
+    <div class="form-group" [ngClass]="{'has-error':(title.touched || title.dirty) && (!title.valid)}">
+      <label>Movie Title:</label>
+      <input type="text" class="form-control" [(ngModel)]="name" name="name" #title="ngModel" placeholder="Enter the name of movie" required/>
+      <span class="help-block" *ngIf="title.touched && !title.valid">
+        <span *ngIf="title.errors.required"> You have not entered the name</span>
+      </span>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error':(myear.touched || myear.dirty) && (!myear.valid)}">
+      <label>Movie Year:</label>
+      <input type="text" class="form-control" [(ngModel)]="year" name="year" #myear="ngModel" placeholder="Enter the year of movie"
+        required/>
+      <span class="help-block" *ngIf="myear.touched && !myear.valid">
+        <span *ngIf="myear.errors.required"> You have not entered the year</span>
+      </span>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error':(rate.touched || rate.dirty) && (!rate.valid)}">
+      <label>Movie Rating:</label>
+      <input type="text" class="form-control" [(ngModel)]="rating" name="rating" #rate="ngModel" placeholder="Enter the rating of movie"
+        required/>
+      <span class="help-block" *ngIf="rate.touched && !rate.valid">
+        <span *ngIf="rate.errors.required"> You have not entered the rating</span>
+      </span>
+    </div>
+    
+  <br>
+  <button class="btn btn-primary" (click)="addMovie(addmovie.value)" [disabled]="!addmovie.valid">Submit</button>
+  <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+  </form>
+</div>
