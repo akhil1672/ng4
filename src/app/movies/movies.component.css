@@ -1,3 +1,7 @@
-.col-sm-3{
-    padding-top: 30px;
+.card{
+    margin-top: 10px;
+}
+
+.card-body{
+    min-height: 250px;
 }

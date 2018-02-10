@@ -12,16 +12,17 @@
 <div class="container">
   <input style="padding-top:10px" type="text" [(ngModel)]="moviename" name="moviename" class="form-control" placeholder="Search Movies by name"/>
 </div>
-
-<div class="row">
-  <div class="col-sm-3" *ngFor="let movie of movies|search:moviename" >
-    <div class="card w-30" >
-      <div class="card-body" >
-        <h4 class="card-title"><a [routerLink]="['/movies',movie.name]">{{movie.name}}</a></h4>
-        <p class="card-text"><label>Year:</label>{{movie.year}}</p>
-        <p class="card-text"><label>Rating:</label>{{movie.rating}}</p>
-        <button class="btn btn-primary" [routerLink]="['/updatemovie',movie.name]">Update</button>
-        <button class="btn btn-danger" (click)="deleteMovie(movie.name)">Delete</button>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let movie of movies|search:moviename" >
+      <div class="card w-30" >
+        <div class="card-body">
+          <h4 class="card-title"><a [routerLink]="['/movies',movie.name]">{{movie.name}}</a></h4>
+          <p class="card-text"><label>Year:</label>{{movie.year}}</p>
+          <p class="card-text"><label>Rating:</label>{{movie.rating}}</p>
+          <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Update movie" [routerLink]="['/updatemovie',movie.name]">Update</button>
+          <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete movie" (click)="deleteMovie(movie.name)">Delete</button>
+        </div>
       </div>
     </div>
   </div>

@@ -1,10 +1,29 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="nav-item">MoviesHub</a>
+    <a class="nav-item nav-link" [routerLink]="['/home']">Home</a>
+    <a class="nav-item nav-link" [routerLink]="['/movies']">Movies</a>
+    <a class="nav-item nav-link" [routerLink]="['/addmovie']">Add Movie</a>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
     <a class="navbar-brand">MoviesHub</a>
-    <div class="row">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-        <a class="nav-item nav-link" [routerLink]="['/home']" >Home</a>
-        <a class="nav-item nav-link" [routerLink]="['/movies']">Movies</a>
-        <a class="nav-item nav-link" [routerLink]="['/addmovie']">Add Movie</a>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/home']">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/movies']">Movies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/addmovie']">Add Movie</a>
+            </li>
         </ul>
     </div>
 </nav>

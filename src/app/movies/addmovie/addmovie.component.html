@@ -28,7 +28,7 @@
     </div>
     
   <br>
-  <button class="btn btn-primary" (click)="addMovie(addmovie.value)" [disabled]="!addmovie.valid">Submit</button>
-  <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+  <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Add Movie" (click)="addMovie(addmovie.value)" [disabled]="!addmovie.valid">Submit</button>
+  <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Cancel" (click)="cancel()">Cancel</button>
   </form>
 </div>

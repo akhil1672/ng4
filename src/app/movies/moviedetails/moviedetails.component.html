@@ -3,14 +3,12 @@
   <h2>Movie details</h2>
   <div class="container well" style="background-color:rgba(111, 245, 238, 0.842)">
     <h5>
-      <hr>
-      <label>Movie name: </label> {{movie?.name}}
+      <label><b>Movie name:</b> </label> {{movie?.name}}
       <br>
-      <label>Movie Year: </label> {{movie?.year}}
+      <label><b>Movie year:</b></label> {{movie?.year}}
       <br>
-      <label>Movie Rating: </label> {{movie?.rating}}
+      <label><b>Movie rating:</b></label> {{movie?.rating}}
       <br>
-      <hr>
     </h5>
   </div>
   <button class="btn btn-success" [routerLink]="['/movies']">Back to Movies page</button>

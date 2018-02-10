@@ -18,6 +18,8 @@ import { MovieactivatorService } from './movies/moviedetails/movieactivator.serv
 import { MovieresolverService } from './movies/movieresolver.service';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { RoutingGuardService } from './movies/routing-guard.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -35,17 +37,19 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
   imports: [
     FormsModule,ToastrModule.forRoot(),BrowserAnimationsModule,
     RouterModule.forRoot([
+      { path: 'login', component: LoginComponent, canActivate: [RoutingGuardService]},
       {path:'home',component:HomeComponent},
       {path:'movies',component:MoviesComponent,resolve:[MovieresolverService]},
       {path:'movies/:name',component:MoviedetailsComponent,canActivate:[MovieactivatorService]},
       {path:'updatemovie/:name',component:UpdatemovieComponent},
       {path:'addmovie',component:AddmovieComponent,canDeactivate:['moviedeactivator']},
-      { path: '', redirectTo: 'home', pathMatch: 'full' }
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      {path:'**',redirectTo:'home',pathMatch:'full'}
     ]),
     BrowserModule,
     HttpClientModule
   ],
-  providers: [MovieService,MovieresolverService,{provide:'moviedeactivator',useValue:isNotSaved},MovieactivatorService],
+  providers: [MovieService,MovieresolverService,{provide:'moviedeactivator',useValue:isNotSaved},MovieactivatorService,RoutingGuardService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
