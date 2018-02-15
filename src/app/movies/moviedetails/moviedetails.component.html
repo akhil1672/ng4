@@ -1,7 +1,8 @@
 <div class="jumbotron">
-  <span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:40px"></span>
+  <table>
+    <div class="row">
+      <div class="col-2">
   <h2>Movie details</h2>
-  <div class="container well" style="background-color:rgba(111, 245, 238, 0.842)">
     <h5>
       <label><b>Movie name:</b> </label> {{movie?.name}}
       <br>
@@ -10,6 +11,11 @@
       <label><b>Movie rating:</b></label> {{movie?.rating}}
       <br>
     </h5>
-  </div>
+    </div>
+    <div class="col-2">
+      <img src="url('.captainamerica.jpg')"/>
+    </div>
+    </div>
+  </table>
   <button class="btn btn-success" [routerLink]="['/movies']">Back to Movies page</button>
 </div>

@@ -38,6 +38,7 @@ import { LoginService } from './services/login.service';
     FormsModule,ToastrModule.forRoot(),BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent, canActivate: [RoutingGuardService]},
+      {path:'signup',component:SignupComponent},
       {path:'home',component:HomeComponent},
       {path:'movies',component:MoviesComponent,resolve:[MovieresolverService]},
       {path:'movies/:name',component:MoviedetailsComponent,canActivate:[MovieactivatorService]},

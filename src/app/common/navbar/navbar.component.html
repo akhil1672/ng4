@@ -26,4 +26,6 @@
             </li>
         </ul>
     </div>
+    <a class="nav-item nav-link" [routerLink]="['/signup']" *ngIf="!isloggedin">Signup</a>
+    <a class="nav-item nav-link" [routerLink]="['/login']" *ngIf="!isloggedin" onclick="change()">Login</a>
 </nav>

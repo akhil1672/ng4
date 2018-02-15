@@ -7,7 +7,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  isloggedin:boolean=false;
 
+  change(){
+    this.isloggedin=!this.isloggedin;
+  }
   constructor() { }
 
   ngOnInit() {
